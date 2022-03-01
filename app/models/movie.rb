@@ -4,7 +4,10 @@
 #
 #  id          :integer          not null, primary key
 #  description :text
+#  duration    :integer
+#  image       :string
 #  title       :text
+#  year        :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  director_id :integer

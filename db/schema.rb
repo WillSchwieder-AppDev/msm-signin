@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_01_151452) do
+ActiveRecord::Schema.define(version: 2022_03_01_162542) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
@@ -18,10 +18,19 @@ ActiveRecord::Schema.define(version: 2022_03_01_151452) do
     t.date "dob"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "movie_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "actor_id"
     t.integer "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,6 +41,8 @@ ActiveRecord::Schema.define(version: 2022_03_01_151452) do
     t.date "dob"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
+    t.string "bio"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -40,6 +51,9 @@ ActiveRecord::Schema.define(version: 2022_03_01_151452) do
     t.integer "director_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "year"
+    t.string "image"
+    t.integer "duration"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -54,6 +68,8 @@ ActiveRecord::Schema.define(version: 2022_03_01_151452) do
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
   end
 
 end
