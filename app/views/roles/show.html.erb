@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      Role #<%= @the_role.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/roles">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_role/<%= @the_role.id %>">
+          Delete role
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Movie
+      </dt>
+      <dd>
+        <%= @the_role.movie_id %>
+      </dd>
+
+      <dt>
+        Actor
+      </dt>
+      <dd>
+        <%= @the_role.actor_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_role.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_role.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit role
+    </h2>
+
+    <form action="/modify_role/<%= @the_role.id %>"  method="post" >
+      <div>
+        <label for="movie_id_box">
+          Movie
+        </label>
+
+        <input type="text" id="movie_id_box" name="query_movie_id" value="<%= @the_role.movie_id %>">
+      </div>
+
+      <div>
+        <label for="actor_id_box">
+          Actor
+        </label>
+
+        <input type="text" id="actor_id_box" name="query_actor_id" value="<%= @the_role.actor_id %>">
+      </div>
+
+      <button>
+        Update role
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
